@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthtogo-api
+  namespace: healthtogo
+  labels:
+    app: healthtogo-api
+    component: api
+spec:
+  selector:
+    matchLabels:
+      app: healthtogo-api
+  template:
+    metadata:
+      labels:
+        app: healthtogo-api
+        component: api
+    spec:
+      containers:
+      - name: healthtogo-api
+        image: 470778815705.dkr.ecr.us-east-1.amazonaws.com/healthtogo:latest
+        ports:
+        - containerPort: 5000
+          name: http
+      

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthtogo-api
+  labels:
+    app: healthtogo-api
+    component: api
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
+  # have to do this for ALB target-type: instance to work
+  type: NodePort
+  selector:
+    app: healthtogo-api
+    component: api
