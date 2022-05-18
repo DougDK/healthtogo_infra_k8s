@@ -16,6 +16,7 @@ spec:
         app: healthtogo-api
         component: api
     spec:
+      serviceAccountName: healthtogo
       containers:
       - name: healthtogo-api
         image: 470778815705.dkr.ecr.us-east-1.amazonaws.com/healthtogo:latest
